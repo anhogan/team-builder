@@ -31,10 +31,10 @@ function App() {
   const addMember = (member) => {
     const newMember = {
       id: Date.now(),
-      firstName: '',
-      lastName: '',
-      role: '',
-      primaryStack: ''
+      firstName: member.firstName,
+      lastName: member.lastName,
+      role: member.role,
+      primaryStack: member.primaryStack
     }
     setTeamMember([...teamMember, newMember]);
   };

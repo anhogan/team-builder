@@ -53,3 +53,19 @@
   margin-right: auto;
   margin-left: auto;
 }
+
+.form-input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input-container input {
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form .btn-secondary {
+  margin: 1%;
+  width: 10%;
+}

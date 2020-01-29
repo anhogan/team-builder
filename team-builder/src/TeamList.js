@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button, Col, Row } from 'reactstrap'
+import { Card, CardTitle, CardSubtitle, CardText, Button, Col, Row } from 'reactstrap'
 
 const TeamList = (props) => {
   return (
