@@ -1,32 +1,31 @@
 import React, { useState } from 'react';
+import TeamList from './TeamList';
 import Form from './Form';
 import './App.css';
 
 function App() {
-  const [teamMember, setTeamMember] = useState({
-    firstName: '',
-    lastName: '',
-    role: '',
-    primaryStack: ''
-  });
+  const [teamMember, setTeamMember] = useState([
+    {
+      id: 1,
+      firstName: 'Eric',
+      lastName: 'Li',
+      role: 'Engineering Manager',
+      primaryStack: 'Python'
+    }
+  ]);
 
-  // const [teamList, setTeamList] = useState([]);
+  const handleChange = (event) => {
+    setTeamMember({...teamMember, [event.target.name]: event.target.value});
+  };
 
-  // const handleChange = (event) => {
-  //   setTeamMember({...teamMember, [event.target.name]: event.target.value});
-  // };
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   setTeamMember({firstName: '', lastName: '', role: '', primaryStack: ''});
-  // };
-
-  // const addToTeamList = member => {
-  //   setTeamList([...teamList, member])
-  // };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setTeamMember({firstName: '', lastName: '', role: '', primaryStack: ''});
+  };
 
   return (
     <div className="App">
+      <TeamList members={teamMember}/>
       <Form 
         teamMember={teamMember} 
         setTeamMember={setTeamMember} />

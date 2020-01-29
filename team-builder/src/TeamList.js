@@ -5,10 +5,11 @@ const TeamList = (props) => {
     <div>
       <h3>Team Members</h3>
       {props.members.map(member => (
-        <span>{member.firstName}</span>
-        // <span>{member.lastName}</span>
-        // <span>{member.role}</span>
-        // <span>{member.primaryStack}</span>
+        <div key={member.id}>
+          <h3>{member.firstName} {member.lastName}</h3>
+          <h4>Role: {member.role}</h4>
+          <p>Primary Stack: {member.primaryStack}</p>
+        </div>
       ))}
       <button>Edit</button>
     </div>
