@@ -20,7 +20,7 @@ const Form = (props) => {
 
   return (
     <div>
-      <h3>Add a Team Member</h3>
+      <h2>Add a Team Member</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="firstName">First Name</label>
           <input

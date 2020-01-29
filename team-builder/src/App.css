@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.col-sm-12 {
+  width: 100%;
+  display: flex;
+}
+
+.card {
+  width: 48%;
+  margin: 2%;
+  padding: 1%;
+}
+
+.btn-secondary {
+  width: 30%;
+  margin-right: auto;
+  margin-left: auto;
+}
