@@ -8,42 +8,48 @@ const Form = (props) => {
     primaryStack: ''
   });
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setMember({...member, [event.target.name]: event.target.value});
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.addMember(member);
+    setMember({firstName: '', lastName: '', role: '', primaryStack: ''});
   };
 
   return (
     <div>
       <h3>Add a Team Member</h3>
-      <form>
-        <label>
-          First Name: 
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="firstName">First Name</label>
           <input
+            id="firstName"
             type="text" 
             name="firstName"
-            onChange={handleChange}></input>
-        </label>
-        <label>
-          Last Name: 
+            onChange={handleChange}
+            value={member.firstName} />
+        <label htmlFor="lastName">Last Name</label>
           <input 
+            id="lastName"
             type="text" 
             name="lastName"
-            onChange={handleChange}></input>
-        </label>
-        <label>
-          Role: 
+            onChange={handleChange}
+            value={member.lastName} />
+        <label htmlFor="role">Role</label>
           <input 
+            id="role"
             type="text" 
             name="role"
-            onChange={handleChange}></input>
-        </label>
-        <label>
-          Primary Stack: 
+            onChange={handleChange}
+            value={member.role} />
+        <label htmlFor="primaryStack">Primary Stack</label>
           <input 
+            id="primaryStack"
             type="text" 
             name="primaryStack"
-            onChange={handleChange}></input>
-        </label>
+            onChange={handleChange}
+            value={member.primaryStack} />
         <button>Add to Team</button>
       </form>
     </div>

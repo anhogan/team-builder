@@ -11,24 +11,39 @@ function App() {
       lastName: 'Li',
       role: 'Engineering Manager',
       primaryStack: 'Python'
+    },
+    {
+      id: 2,
+      firstName: 'Nate',
+      lastName: 'Collins',
+      role: 'Senior Software Engineer',
+      primaryStack: 'Ruby'
+    },
+    {
+      id: 3,
+      firstName: 'Amanda',
+      lastName: 'Hogan',
+      role: 'Software Engineer',
+      primaryStack: 'React'
     }
   ]);
 
-  const handleChange = (event) => {
-    setTeamMember({...teamMember, [event.target.name]: event.target.value});
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setTeamMember({firstName: '', lastName: '', role: '', primaryStack: ''});
+  const addMember = (member) => {
+    const newMember = {
+      id: Date.now(),
+      firstName: '',
+      lastName: '',
+      role: '',
+      primaryStack: ''
+    }
+    setTeamMember([...teamMember, newMember]);
   };
 
   return (
     <div className="App">
       <TeamList members={teamMember}/>
       <Form 
-        teamMember={teamMember} 
-        setTeamMember={setTeamMember} />
+        addMember={addMember} />
     </div>
   );
 }
