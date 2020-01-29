@@ -39,11 +39,26 @@ function App() {
     setTeamMember([...teamMember, newMember]);
   };
 
+  const membertoEdit = (member) => {
+    const editMember = {
+      id: member.id,
+      firstName: member.firstName,
+      lastName: member.lastName,
+      role: member.role,
+      primaryStack: member.primaryStack
+    }
+    setTeamMember(editMember);
+  };
+
   return (
     <div className="App">
-      <TeamList members={teamMember}/>
+      <TeamList 
+        members={teamMember}
+        membertoEdit={membertoEdit} />
       <Form 
-        addMember={addMember} />
+        member={teamMember}
+        addMember={addMember}
+        membertoEdit={membertoEdit} />
     </div>
   );
 }

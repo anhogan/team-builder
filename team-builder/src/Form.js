@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from 'reactstrap';
 
 const Form = (props) => {
@@ -10,16 +10,18 @@ const Form = (props) => {
   });
 
   const handleChange = (event) => {
-    console.log(member);
     setMember({...member, [event.target.name]: event.target.value});
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     props.addMember(member);
-    console.log(member);
     setMember({firstName: '', lastName: '', role: '', primaryStack: ''});
   };
+
+  useEffect(() => {
+    setMember({firstName: props.member.firstName, lastName: props.member.lastName, role: props.member.role, primaryStack: props.member.primaryStack})
+  }, [props.membertoEdit])
 
   return (
     <div>
