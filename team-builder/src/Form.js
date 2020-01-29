@@ -2,17 +2,15 @@ import React, { useState } from 'react';
 import TeamList from './TeamList';
 
 const Form = (props) => {
-  const [member] = useState();
+  const [member] = useState({});
   const [teamList, setTeamList] = useState([]);
-
-  const addToTeamList = member => {
-    setTeamList([...teamList, member])
-  };
 
   const saveMember = (event) => {
     event.preventDefault();
     props.setTeamMember({firstName: '', lastName: '', role: '', primaryStack: ''});
-    const addToTeamList = addToTeamList();
+    const addToTeamList = member => {
+      setTeamList([...teamList, member])
+    };
     addToTeamList(member);
   };
 
