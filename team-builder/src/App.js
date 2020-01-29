@@ -13,9 +13,9 @@ function App() {
 
   const [teamList, setTeamList] = useState([]);
 
-  const handleChange = (event) => {
-    setTeamMember({...teamMember, [event.target.name]: event.target.value});
-  };
+  // const handleChange = (event) => {
+  //   setTeamMember({...teamMember, [event.target.name]: event.target.value});
+  // };
 
   // const handleSubmit = (event) => {
   //   event.preventDefault();
@@ -29,7 +29,10 @@ function App() {
   return (
     <div className="App">
       <TeamList members={teamList} />
-      <Form teamMember={teamMember} setTeamMember={setTeamMember} addToTeamList={addToTeamList} />
+      <Form 
+        teamMember={teamMember} 
+        setTeamMember={setTeamMember} 
+        addToTeamList={addToTeamList} />
     </div>
   );
 }
