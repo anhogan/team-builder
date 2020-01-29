@@ -20,8 +20,8 @@ const Form = (props) => {
   };
 
   useEffect(() => {
-    setMember({firstName: props.member.firstName, lastName: props.member.lastName, role: props.member.role, primaryStack: props.member.primaryStack})
-  }, [props.membertoEdit])
+    setMember({firstName: props.editMember.firstName, lastName: props.editMember.lastName, role: props.editMember.role, primaryStack: props.editMember.primaryStack})
+  }, [props.editMember])
 
   return (
     <div>

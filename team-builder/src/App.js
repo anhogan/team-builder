@@ -39,6 +39,13 @@ function App() {
     setTeamMember([...teamMember, newMember]);
   };
 
+  const [editMember, setEditMember] = useState({
+    firstName: '',
+    lastName: '',
+    role: '',
+    primaryStack: ''
+  });
+
   const membertoEdit = (member) => {
     const editMember = {
       id: member.id,
@@ -47,7 +54,7 @@ function App() {
       role: member.role,
       primaryStack: member.primaryStack
     }
-    setTeamMember(editMember);
+    setEditMember(editMember);
   };
 
   return (
@@ -58,7 +65,7 @@ function App() {
       <Form 
         member={teamMember}
         addMember={addMember}
-        membertoEdit={membertoEdit} />
+        editMember={editMember} />
     </div>
   );
 }
