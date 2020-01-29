@@ -10,24 +10,28 @@ const Form = (props) => {
     addToTeamList(member);
   }
 
-  if (!member) {
-    return <div>Team Members Loading...</div>
-  }
+  // if (!member) {
+  //   return <div>Team Members Loading...</div>
+  // }
 
   return (
     <div>
       <form onSubmit={saveMember}>
         <label>
-          <input type="text" name="firstName" value={props.teamMember.firstName}></input>
+          First Name: 
+          <input type="text" name="firstName"></input>
         </label>
         <label>
-          <input type="text" name="lastName" value={props.teamMember.lastName}></input>
+          Last Name: 
+          <input type="text" name="lastName"></input>
         </label>
         <label>
-          <input type="text" name="role" value={props.teamMember.role}></input>
+          Role: 
+          <input type="text" name="role"></input>
         </label>
         <label>
-          <input type="text" name="primaryStack" value={props.teamMember.primaryStack}></input>
+          Primary Stack: 
+          <input type="text" name="primaryStack"></input>
         </label>
       </form>
     </div>
