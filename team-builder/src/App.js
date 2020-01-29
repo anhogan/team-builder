@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import TeamList from './TeamList';
 import Form from './Form';
 import './App.css';
 
@@ -11,7 +10,7 @@ function App() {
     primaryStack: ''
   });
 
-  const [teamList, setTeamList] = useState([]);
+  // const [teamList, setTeamList] = useState([]);
 
   // const handleChange = (event) => {
   //   setTeamMember({...teamMember, [event.target.name]: event.target.value});
@@ -22,17 +21,15 @@ function App() {
   //   setTeamMember({firstName: '', lastName: '', role: '', primaryStack: ''});
   // };
 
-  const addToTeamList = member => {
-    setTeamList([...teamList, member])
-  };
+  // const addToTeamList = member => {
+  //   setTeamList([...teamList, member])
+  // };
 
   return (
     <div className="App">
-      <TeamList members={teamList} />
       <Form 
         teamMember={teamMember} 
-        setTeamMember={setTeamMember} 
-        addToTeamList={addToTeamList} />
+        setTeamMember={setTeamMember} />
     </div>
   );
 }
